@@ -26,7 +26,7 @@ character.title = "Lady of Winterfell";
 // - Add another property named `greet` and value should be a function when called should alert `I am [NAME HERE] and my title is [TITLE HERE]`.
 
 character.greet = function(){
-    return `I am ${character.characterName} and my title is ${character.title}`;
+    alert(`I am ${character.characterName} and my title is ${character.title}`);
 }
 // - Add a new property to the character object named `isFemale` and value will be `true`
 
@@ -38,7 +38,7 @@ character.greet();
 //  - Change the method `greet` to now alert `She is [NAME HERE] and her title is [TITLE HERE]`.
 
 character.greet = function(){
-    return `She is ${character.characterName} and her title is ${character.title}`;
+    alert(`She is ${character.characterName} and her title is ${character.title}`);
 }
 // - Check by calling `greet` and see if the message changed or not.
 
