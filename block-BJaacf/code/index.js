@@ -19,7 +19,25 @@ console.log(totalOne / numbers.length);
 
 // 4. Find the highest number in the array and print it to the console using console.log()
 
+let heighest = numbers[0];
+
+for (let number of numbers){
+    if(heighest < number){
+        heighest = number;
+    }
+}
+console.log(heighest)
+
 // 5. Find the lowest number in the array and print it to the console using console.log()
+
+let lowest = numbers[0];
+
+for (number of numbers){
+    if(lowest > number){
+        lowest = number;
+    }
+    console.log(lowest);
+}
 
 // 6. Find the even numbers in the array and print them to the console using console.log()
 
