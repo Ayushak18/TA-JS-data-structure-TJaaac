@@ -14,22 +14,22 @@ let newUser = user;
 - Create the memory representation of the above snippet on notebook.
 - Take a photo/screenshot and add it to the folder `code`
 
-<!-- To add this image here use ![name](./hello.jpg) -->
+To add this image here use ![Memory Representation](./Storage.jpeg)
 
 2. Answer the following with reason:
 
-- `user == newUser;` // output and reason
-- `user === newUser;`
-- `user.name === newUser.name;`
-- `user.name == newUser.name;`
-- `user.sibling == newUser.sibling;`
-- `user.sibling === newUser.sibling;`
-- `user.sibling == allBrothers;`
-- `user.sibling === allBrothers;`
-- `brothersCopy === allBrothers;`
-- `brothersCopy == allBrothers;`
-- `brothersCopy == user.sibling;`
-- `brothersCopy === user.sibling;`
-- `brothersCopy[0] === user.sibling[0];`
-- `brothersCopy[1] === user.sibling[1];`
-- `user.sibling[1] === newUser.sibling[1];`
+- `user == newUser;` // True  - both are pointing to the same address.
+- `user === newUser;` // True  - both are pointing to the same address.
+- `user.name === newUser.name;` // True  - both are pointing to the same address.
+- `user.name == newUser.name;` // True  - both are pointing to the same address.
+- `user.sibling == newUser.sibling;` // True  - both are pointing to the same address.
+- `user.sibling === newUser.sibling;`// True  - both are pointing to the same address.
+- `user.sibling == allBrothers;` // False - Both are pointing to the different datas.
+- `user.sibling === allBrothers;` // False - Both are pointing to the different datas.
+- `brothersCopy === allBrothers;`// False - Both are pointing to the different datas.
+- `brothersCopy == allBrothers;` //False - Both are pointing to the different datas.
+- `brothersCopy == user.sibling;` // True  - both are pointing to the same address.
+- `brothersCopy === user.sibling;`// True  - both are pointing to the same address.
+- `brothersCopy[0] === user.sibling[0];`// True  - both are pointing to the same address.
+- `brothersCopy[1] === user.sibling[1];`// True  - both are pointing to the same address.
+- `user.sibling[1] === newUser.sibling[1];`// True  - both are pointing to the same address.
