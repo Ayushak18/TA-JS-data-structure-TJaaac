@@ -45,8 +45,8 @@ console.log(person == personTwo); // false , have different address
 console.log(person === personTwo); // false , have different address
 console.log(person.address === personTwo.address); // true due to the shallow cloning
 console.log(person.address == personTwo.address); // true due to the shallow cloning
-console.log(personTwo.address.city); // 'Navada' , due to having same address
-console.log(person.address.city); // 'Navada' because we changed it
+console.log(personTwo.address.city); // 'San Jose' , due to having same address
+console.log(person.address.city); // 'San Jose'
 console.log(person.address.city == personTwo.address.city); // True due to having same address
 ```
 
@@ -78,8 +78,8 @@ console.log(person === personTwo); // false due to different addresses
 console.log(person.address === personTwo.address); // false due to different addresses
 console.log(person.address == personTwo.address); // false due to different addresses
 console.log(personTwo.address.city); // 'San Jose' due to deep cloning
-console.log(person.address.city); // 'Navada' because we changed it later
-console.log(person.address.city == personTwo.address.city); // false due to different addresses
+console.log(person.address.city); // 'San Jose'
+console.log(person.address.city == personTwo.address.city); // True due to deep cloning
 ```
 
 4. Clone the `blogs` variable into a new variable named `clonedBlogs`
@@ -104,6 +104,8 @@ let blogs = [
 ];
 
 // Your code goes here
+
+let clonedBlogs = [{ ...blogs[0] }, { ...blogs[1] }, { ...blogs[2] }];
 ```
 
 5. Clone the `question` variable into a new variable named `questionClone`
@@ -129,6 +131,10 @@ var questions = [
 ];
 
 // Your code goes here
+let questionClone = [
+  { ...questions[0], responses: [...questions[0].responses] },
+  { ...questions[1], responses: [...questions[1].responses] },
+];
 ```
 
 6. Clone the `allBlogs` variable into a new variable named `allBlogsClone`
@@ -156,6 +162,11 @@ var allBlogs = {
 };
 
 // Your code goes here
+let allBlogsClone = {
+  ...allBlogs,
+  author: { ...allBlogs.author },
+  comments: [{ ...allBlogs.comments[0], ...allBlogs.comments[1] }],
+};
 ```
 
 7. Clone the `person` variable into a new variable named `clonedPerson`
@@ -163,7 +174,7 @@ var allBlogs = {
 ```js
 let person = [
   {
-    input: { name: "Ryan" },
+    input: {name: "Ryan",},
     output: { name: "Ryan" },
   },
   {
@@ -189,13 +200,38 @@ let person = [
 ];
 
 // Your code goes here
+let clonedPerson = [
+  {
+    input : {...person[0].input},
+    output  : {...person[0].output}
+  },
+  {
+    input : { name :{...person[1].input.name}},
+    output : {...person[1].output}
+  },
+  {
+    input : {...person[2].input},
+    output : {...person[2].output}
+  },
+  {
+    input : {
+      name : {...person[3].input.name},
+      birthday : {...person[3].input.birthday}
+    },
+    output : {
+      ...person[3].output
+    }
+  }
+  ];
 ```
 
 8. Write a function named `cloneObject` that accepts an object and returns the clone of the object
 
 ```js
-function cloneObject() {
+function cloneObject(object) {
   // your code
+  let clonedObject = JSON.parse(JSON.stringify(object));
+  return clonedObject;
 }
 
 // Run the test below to check your function
