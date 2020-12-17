@@ -11,7 +11,7 @@ let arr2 = arr;
 
 Answer the following with reason after going through the above code:
 
-- `[10] === [10]`
+- `[10] === [10]` // false , both of them are of different address.
 - What is the value of obj? // { surname: 'Stark' };
 - `obj == newObj` // false
 - `obj === newObj` // false
@@ -33,8 +33,8 @@ function personDetails(person) {
 }
 var person1 = { name: 'Alex', age: 30 };
 var person2 = personDetails(person1);
-console.log(person1); 
-console.log(person2);  
+console.log(person1); // { name: 'Alex', age: 25 }
+console.log(person2);  // { name: 'John', age: 50 }
 ```
 
 3. What will be the output of the below code:
@@ -46,6 +46,6 @@ var user = {
 };
 user.brothers = brothers;
 brothers.push('Robb');
-console.log(user.brothers === brothers); //1. output 
-console.log(user.brothers.length === brothers.length); //2. output 
+console.log(user.brothers === brothers); //1. true
+console.log(user.brothers.length === brothers.length); //2. true
 ```
